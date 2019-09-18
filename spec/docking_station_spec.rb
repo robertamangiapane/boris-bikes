@@ -16,6 +16,13 @@ describe DockingStation do
     station.dock(bike)
     expect(station.bike).to eq bike
   end
+
+  it "dock won't relase a bike when none exists" do
+    station = DockingStation.new
+    station.bike = nil
+    expect(station.release_bike).to eq nil
+  end
+
 end
 
 
